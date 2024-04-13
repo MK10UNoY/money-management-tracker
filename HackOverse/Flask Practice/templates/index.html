@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/ico.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="./css/sal.css">
+    <title>S.A.M.P.</title>
+    <style>
+        *{
+    scroll-behavior: smooth;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    transition: 0.5s;
+}
+header img{
+    width: 70px;
+    height: 70px;
+}
+header.sticky{
+    padding: 20px 100px;
+    background: #162c3b;
+}
+header .logo{
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.banner{
+    FONT-WEIGHT: 500;
+    position: relative;
+    width: 100%;
+    height:100vh;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    background: linear-gradient(transparent,#fefefe,90deg) !important;
+    padding: 0;
+}
+.banner img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+.banner .content{
+    position: relative;
+    max-width: 500px;
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 7%;
+}
+.banner .content h2{
+    font-size: 60px;
+    color:#000000;
+
+}
+.banner .content p{
+    font-size: 24px;
+    color:#000000;
+}
+.banner .content a{
+    text-decoration: none;
+}
+.banner .content .learnmore{
+    font-size: 20px;
+    color:#000000;
+    border:2px solid #000000;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    height: 50px;
+    align-content: center;
+    transition: all 0.2s;
+}
+.banner .content .learnmore:hover{
+    color: #fefefe;
+    background-color: #000000;
+    border:2px solid #fefefe;
+    box-shadow:0 0 2px 1px #000000;
+}
+.about{
+    position: relative;
+    width: 100%;
+    height:150vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/about.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+.about .box{
+    margin-top: 4%;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    height: inherit;
+    justify-content: space-evenly;
+}
+.about .box .firstline{
+    display: flex;
+    width: 80%;
+    gap: 10px;
+    justify-content: center;
+}
+
+.about .box .firstline .text{
+    display: flex;
+    text-wrap: wrap;
+    width: 30%;
+    position: absolute;
+    z-index: 1;
+}
+.about .box .firstline .textbox{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.about .box .firstline .i{
+    position: relative;
+    height: 40%;
+    width: 40%;
+    background: url('../assets/about.svg');
+}
+
+.about .box .firstline .textbox h2{
+    font-size: 3em;
+}
+.about .box .firstline .textbox p{
+    font-size: 1.5em;
+}
+.about .box .firstline .textbox .learnmore{
+    font-size: 1.5em;
+    color:#000000;
+    border:2px solid #000000;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    height: 50px;
+    align-content: center;
+    transition: all 0.2s;
+}
+.about .box .firstline .textbox .learnmore:hover{
+    font-size: 1.5em;
+    color: #fefefe;
+    background-color: #000000;
+    border:2px solid #fefefe;
+    box-shadow:0 0 2px 1px #000000;
+}
+
+.secondline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.secondline:nth-child(){
+    margin: 20px;
+}
+.card1 {
+    display: flex;
+    flex-direction: column;
+    background: -webkit-linear-gradient(#FA82AD,#D52D2D);
+    width: 190px;
+    height: 200px;
+    padding: 14px;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #8485FF;
+    background: -webkit-linear-gradient(#2F37FF,#3C3C79);
+    width: 190px;
+    height: 200px;
+    padding: 14px;
+}
+
+.card3 {
+    display: flex;
+    flex-direction: column;
+    background-color: #4344E8;
+    background: -webkit-linear-gradient(#9192FF,#1F2061);
+    width: 190px;
+    height: 200px;
+    padding: 14px;
+}
+
+.card1 h3,
+.card2 h3,
+.card3 h3 {
+    font-size: 2em;
+    padding: 10px;
+}
+
+.services{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ECECEC;
+}
+#whitebox {
+    background-color: wheat;
+    width: 70%;
+    height: 300px;
+    justify-self: center;
+}
+
+.cards-nthh {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px !important;
+    justify-content: space-around;
+}
+
+#card1 {
+    background-color: #4344E8;
+}
+
+.small-height-card {
+    width: 33%;
+}
+
+#tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.detailscard {
+    height: fit-content;
+    width: 25%;
+    max-height: 70%;
+    min-height: 70%;
+    flex-wrap: wrap;
+    color: whitesmoke;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+}
+
+.detailscard ul {
+    margin-top: 30px ;
+    font-size: 1.3em;
+}
+
+.detailscard font {
+    font-size: 2em;
+}
+
+#headline-tools {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bolder;
+    padding: 50px;
+}
+    </style>
+    <script defer>
+        !(function (e, t) {
+  "object" == typeof exports && "object" == typeof module
+    ? (module.exports = t())
+    : "function" == typeof define && define.amd
+    ? define([], t)
+    : "object" == typeof exports
+    ? (exports.sal = t())
+    : (e.sal = t());
+})(this, function () {
+  return (function (e) {
+    var t = {};
+    function n(r) {
+      if (t[r]) return t[r].exports;
+      var o = (t[r] = { i: r, l: !1, exports: {} });
+      return e[r].call(o.exports, o, o.exports, n), (o.l = !0), o.exports;
+    }
+    return (
+      (n.m = e),
+      (n.c = t),
+      (n.d = function (e, t, r) {
+        n.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r });
+      }),
+      (n.r = function (e) {
+        "undefined" != typeof Symbol &&
+          Symbol.toStringTag &&
+          Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+          Object.defineProperty(e, "__esModule", { value: !0 });
+      }),
+      (n.t = function (e, t) {
+        if ((1 & t && (e = n(e)), 8 & t)) return e;
+        if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+        var r = Object.create(null);
+        if (
+          (n.r(r),
+          Object.defineProperty(r, "default", { enumerable: !0, value: e }),
+          2 & t && "string" != typeof e)
+        )
+          for (var o in e)
+            n.d(
+              r,
+              o,
+              function (t) {
+                return e[t];
+              }.bind(null, o)
+            );
+        return r;
+      }),
+      (n.n = function (e) {
+        var t =
+          e && e.__esModule
+            ? function () {
+                return e.default;
+              }
+            : function () {
+                return e;
+              };
+        return n.d(t, "a", t), t;
+      }),
+      (n.o = function (e, t) {
+        return Object.prototype.hasOwnProperty.call(e, t);
+      }),
+      (n.p = "dist/"),
+      n((n.s = 0))
+    );
+  })([
+    function (e, t, n) {
+      "use strict";
+      n.r(t);
+      n(1);
+      function r(e, t) {
+        var n = Object.keys(e);
+        if (Object.getOwnPropertySymbols) {
+          var r = Object.getOwnPropertySymbols(e);
+          t &&
+            (r = r.filter(function (t) {
+              return Object.getOwnPropertyDescriptor(e, t).enumerable;
+            })),
+            n.push.apply(n, r);
+        }
+        return n;
+      }
+      function o(e, t, n) {
+        return (
+          t in e
+            ? Object.defineProperty(e, t, {
+                value: n,
+                enumerable: !0,
+                configurable: !0,
+                writable: !0,
+              })
+            : (e[t] = n),
+          e
+        );
+      }
+      var i = "Sal was not initialised! Probably it is used in SSR.",
+        a =
+          "Your browser does not support IntersectionObserver!\nGet a polyfill from here:\nhttps://github.com/w3c/IntersectionObserver/tree/master/polyfill",
+        s = {
+          rootMargin: "0% 50%",
+          threshold: 0.5,
+          animateClassName: "sal-animate",
+          disabledClassName: "sal-disabled",
+          enterEventName: "sal:in",
+          exitEventName: "sal:out",
+          selector: "[data-sal]",
+          once: !0,
+          disabled: !1,
+        },
+        l = [],
+        c = null,
+        u = function (e) {
+          e &&
+            e !== s &&
+            (s = (function (e) {
+              for (var t = 1; t < arguments.length; t++) {
+                var n = null != arguments[t] ? arguments[t] : {};
+                t % 2
+                  ? r(Object(n), !0).forEach(function (t) {
+                      o(e, t, n[t]);
+                    })
+                  : Object.getOwnPropertyDescriptors
+                  ? Object.defineProperties(
+                      e,
+                      Object.getOwnPropertyDescriptors(n)
+                    )
+                  : r(Object(n)).forEach(function (t) {
+                      Object.defineProperty(
+                        e,
+                        t,
+                        Object.getOwnPropertyDescriptor(n, t)
+                      );
+                    });
+              }
+              return e;
+            })({}, s, {}, e));
+        },
+        f = function (e) {
+          e.classList.remove(s.animateClassName);
+        },
+        d = function (e, t) {
+          var n = new CustomEvent(e, { bubbles: !0, detail: t });
+          t.target.dispatchEvent(n);
+        },
+        b = function () {
+          document.body.classList.add(s.disabledClassName);
+        },
+        p = function () {
+          c.disconnect(), (c = null);
+        },
+        m = function () {
+          return (
+            s.disabled || ("function" == typeof s.disabled && s.disabled())
+          );
+        },
+        y = function (e, t) {
+          e.forEach(function (e) {
+            e.intersectionRatio >= s.threshold
+              ? (!(function (e) {
+                  e.target.classList.add(s.animateClassName),
+                    d(s.enterEventName, e);
+                })(e),
+                s.once && t.unobserve(e.target))
+              : s.once ||
+                (function (e) {
+                  f(e.target), d(s.exitEventName, e);
+                })(e);
+          });
+        },
+        v = function () {
+          b(), p();
+        },
+        O = function () {
+          document.body.classList.remove(s.disabledClassName),
+            (c = new IntersectionObserver(y, {
+              rootMargin: s.rootMargin,
+              threshold: s.threshold,
+            })),
+            (l = [].filter.call(
+              document.querySelectorAll(s.selector),
+              function (e) {
+                return !(function (e) {
+                  return e.classList.contains(s.animateClassName);
+                })(e, s.animateClassName);
+              }
+            )).forEach(function (e) {
+              return c.observe(e);
+            });
+        },
+        g = function () {
+          var e =
+            arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+          p(),
+            Array.from(document.querySelectorAll(s.selector)).forEach(f),
+            u(e),
+            O();
+        };
+      t.default = function () {
+        var e =
+          arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : s;
+        if ((u(e), "undefined" == typeof window))
+          return (
+            console.warn(i), { elements: l, disable: v, enable: O, reset: g }
+          );
+        if (!window.IntersectionObserver) throw (b(), Error(a));
+        return (
+          m() ? b() : O(), { elements: l, disable: v, enable: O, reset: g }
+        );
+      };
+    },
+    function (e, t, n) {},
+  ]).default;
+});
+//# sourceMappingURL=sal.js.map
+var maxheight=document.getElementById('details-card-6');
+document.getElementById('details-card-1').style.height = maxheight.style.height;
+document.getElementById('details-card-2').style.height = maxheight.style.height;
+document.getElementById('details-card-3').style.height = maxheight.style.height;
+document.getElementById('details-card-4').style.height = maxheight.style.height;
+document.getElementById('details-card-5').style.height = maxheight.style.height;
+
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <img src="./assets/ico.svg" alt="">
+            <a href="#" class="logo">SAMP</a>
+        </header>
+
+        <!--catch section-->
+
+        <div class="catch">
+            <div class="banner" id="home">
+                <img src="./assets/banner.svg">
+                <div class="content">
+                    <h2>Out of Money?</h2>
+                    <p>Use our budget tracker to get rid of money shortage. Get
+                        prediction of your savings and expenses according to your
+                        previous expenses.</p>
+                    <a href="#about">
+                        <div class="learnmore">Learn More</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--About-->
+
+        <div class="about">
+            <div class="box">
+                <div class="firstline">
+                    <div class="i"></div>
+                    <div class="textbox">
+                        <h2>About Us</h2>
+                        <p>
+                            SAMP or Student Asset Management &
+                            Planner is an exclusive web app which uses multiple tools such as ML modules,
+                            and to predict user expenses.
+                        </p>
+                        <div class="learnmore">Learn More</div>
+                    </div>
+                </div>
+                <div class="secondline">
+                    <div class="card1" data-sal="slide-right" data-sal-delay="300">
+                        <h3>52 %</h3>
+                        <p>Students face serious monetary challenges</p>
+                    </div>
+                    <div class="card2" data-sal="slide-up" data-sal-delay="300">
+                        <h3>41.6 %</h3>
+                        <p>Students are under 1lakh-5lakh household income margin.</p>
+                    </div>
+                    <div class="card3" data-sal="slide-left" data-sal-delay="300">
+                        <h3>20.8 %</h3>
+                        <p>Students are below the poverty line in the college</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Services-->
+
+        <div class="services">
+            <div id="headline-tools">Get Great Work for Your Budget</div>
+            <div id="tools" class="tools">
+                <div class="detailscard" id="details-card-1" style="background-color: #17186F;">
+                    <font>Expense Tracking:</font>
+                    <ul>
+                        <li>Track all your expenses effortlessly in one place.</li>
+                        <li>Categorize expenses for a detailed overview of where your money goes.</li>
+                        <li>Set custom tags to further organize and understand your spending habits.</li>
+                    </ul>
+                </div>
+                <div class="detailscard" id="details-card-2" style="background-color: #D2B623;">
+                    <font>Budget Planning:</font>
+                    <ul>
+                        <li>Create personalized budgets based on your income and financial goals.</li>
+                        <li>Set spending limits for different categories to stay within your budget.</li>
+                        <li>Receive notifications when you're approaching or exceeding budget limits.</li>
+                        <li>Adjust budgets dynamically as your financial situation changes.</li>
+                    </ul>
+                </div>
+                <div class="detailscard" id="details-card-3" style="background-color: #39B6EB;">
+                    <font>Goal Setting:</font>
+                    <ul>
+                        <li>Set financial goals, whether it's saving for a vacation, paying off debt, or investing in
+                            education.</li>
+                        <li>Track your progress towards each goal and celebrate milestones along the way.</li>
+                        <li>Get personalized recommendations and tips to help you achieve your goals faster.</li>
+                        <li>Adjust goals as needed and set new ones as you accomplish others.</li>
+                    </ul>
+                </div>
+                <div class="detailscard" id="details-card-4" style="background-color: #8485FF;">
+                    <font>Reminders and Alerts:</font>
+                    <ul>
+                        <li>Receive timely reminders for upcoming bills, payments, or financial commitments.</li>
+                        <li>Set customizable alerts for specific spending thresholds or account balances.</li>
+                        <li>Stay informed about important financial events to avoid late fees or penalties.</li>
+                        <li>Never miss a payment deadline</li>
+                    </ul>
+                </div>
+                <div class="detailscard" id="details-card-5" style="background-color: #DA5484;">
+                    <font>Visual Reports and Analytics:</font>
+                    <ul>
+                        <li>Visualize your financial data through interactive charts, graphs, and reports.</li>
+                        <li>Gain insights into your spending habits, trends, and patterns over time.</li>
+                        <li>Identify areas where you can cut costs or save more effectively.</li>
+                        <li>Customize reports to focus on specific time periods, categories, or financial goals.</li>
+                    </ul>
+                </div>
+                <div class="detailscard" id="details-card-6" style="background-color: #4344E8;">
+                    <font>Unique Savings Calculator (Premium Subscription):</font>
+                    <ul>
+                        <li>Access an exclusive savings calculator designed to optimize your financial planning.</li>
+                        <li>Calculate how small changes in your spending or saving habits can impact your long-term
+                            financial goals.</li>
+                        <li>Receive personalized recommendations to maximize your savings potential.</li>
+                        <li>Track the growth of your savings over time and adjust your strategy accordingly.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!--what and why-->
+
+        <div class="whatandwhy"></div>
+
+        <!--mlModel-->
+
+        <div class="ML"></div>
+
+        <!--final section-->
+
+        <div class="final"></div>
+    </div>
+    <script type="text/javascript" src="./js/sal.js"></script>
+    <script type="text/javascript" src="./js/script1.js"></script>
+    <script type="text/javascript">
+        sal({once:false})
+
+    </script>
+<style>
+    /*[data-sal] {*/
+    /*transition-duration: .2s;*/
+    /*transition-duration: var(--sal-duration, .2s);*/
+    /*transition-delay: 0s;*/
+    /*transition-delay: var(--sal-delay, 0s);*/
+    /*transition-timing-function: ease;*/
+    /*transition-timing-function: var(--sal-easing, ease)*/
+/*}*/
+
+[data-sal][data-sal-duration="200"] {
+    transition-duration: .2s
+}
+
+[data-sal][data-sal-duration="250"] {
+    transition-duration: .25s
+}
+
+[data-sal][data-sal-duration="300"] {
+    transition-duration: .3s
+}
+
+[data-sal][data-sal-duration="350"] {
+    transition-duration: .35s
+}
+
+[data-sal][data-sal-duration="400"] {
+    transition-duration: .4s
+}
+
+[data-sal][data-sal-duration="450"] {
+    transition-duration: .45s
+}
+
+[data-sal][data-sal-duration="500"] {
+    transition-duration: .5s
+}
+
+[data-sal][data-sal-duration="550"] {
+    transition-duration: .55s
+}
+
+[data-sal][data-sal-duration="600"] {
+    transition-duration: .6s
+}
+
+[data-sal][data-sal-duration="650"] {
+    transition-duration: .65s
+}
+
+[data-sal][data-sal-duration="700"] {
+    transition-duration: .7s
+}
+
+[data-sal][data-sal-duration="750"] {
+    transition-duration: .75s
+}
+
+[data-sal][data-sal-duration="800"] {
+    transition-duration: .8s
+}
+
+[data-sal][data-sal-duration="850"] {
+    transition-duration: .85s
+}
+
+[data-sal][data-sal-duration="900"] {
+    transition-duration: .9s
+}
+
+[data-sal][data-sal-duration="950"] {
+    transition-duration: .95s
+}
+
+[data-sal][data-sal-duration="1000"] {
+    transition-duration: 1s
+}
+
+[data-sal][data-sal-duration="1050"] {
+    transition-duration: 1.05s
+}
+
+[data-sal][data-sal-duration="1100"] {
+    transition-duration: 1.1s
+}
+
+[data-sal][data-sal-duration="1150"] {
+    transition-duration: 1.15s
+}
+
+[data-sal][data-sal-duration="1200"] {
+    transition-duration: 1.2s
+}
+
+[data-sal][data-sal-duration="1250"] {
+    transition-duration: 1.25s
+}
+
+[data-sal][data-sal-duration="1300"] {
+    transition-duration: 1.3s
+}
+
+[data-sal][data-sal-duration="1350"] {
+    transition-duration: 1.35s
+}
+
+[data-sal][data-sal-duration="1400"] {
+    transition-duration: 1.4s
+}
+
+[data-sal][data-sal-duration="1450"] {
+    transition-duration: 1.45s
+}
+
+[data-sal][data-sal-duration="1500"] {
+    transition-duration: 1.5s
+}
+
+[data-sal][data-sal-duration="1550"] {
+    transition-duration: 1.55s
+}
+
+[data-sal][data-sal-duration="1600"] {
+    transition-duration: 1.6s
+}
+
+[data-sal][data-sal-duration="1650"] {
+    transition-duration: 1.65s
+}
+
+[data-sal][data-sal-duration="1700"] {
+    transition-duration: 1.7s
+}
+
+[data-sal][data-sal-duration="1750"] {
+    transition-duration: 1.75s
+}
+
+[data-sal][data-sal-duration="1800"] {
+    transition-duration: 1.8s
+}
+
+[data-sal][data-sal-duration="1850"] {
+    transition-duration: 1.85s
+}
+
+[data-sal][data-sal-duration="1900"] {
+    transition-duration: 1.9s
+}
+
+[data-sal][data-sal-duration="1950"] {
+    transition-duration: 1.95s
+}
+
+[data-sal][data-sal-duration="2000"] {
+    transition-duration: 2s
+}
+
+[data-sal][data-sal-delay="50"] {
+    transition-delay: .05s
+}
+
+[data-sal][data-sal-delay="100"] {
+    transition-delay: .1s
+}
+
+[data-sal][data-sal-delay="150"] {
+    transition-delay: .15s
+}
+
+[data-sal][data-sal-delay="200"] {
+    transition-delay: .2s
+}
+
+[data-sal][data-sal-delay="250"] {
+    transition-delay: .25s
+}
+
+[data-sal][data-sal-delay="300"] {
+    transition-delay: .3s
+}
+
+[data-sal][data-sal-delay="350"] {
+    transition-delay: .35s
+}
+
+[data-sal][data-sal-delay="400"] {
+    transition-delay: .4s
+}
+
+[data-sal][data-sal-delay="450"] {
+    transition-delay: .45s
+}
+
+[data-sal][data-sal-delay="500"] {
+    transition-delay: .5s
+}
+
+[data-sal][data-sal-delay="550"] {
+    transition-delay: .55s
+}
+
+[data-sal][data-sal-delay="600"] {
+    transition-delay: .6s
+}
+
+[data-sal][data-sal-delay="650"] {
+    transition-delay: .65s
+}
+
+[data-sal][data-sal-delay="700"] {
+    transition-delay: .7s
+}
+
+[data-sal][data-sal-delay="750"] {
+    transition-delay: .75s
+}
+
+[data-sal][data-sal-delay="800"] {
+    transition-delay: .8s
+}
+
+[data-sal][data-sal-delay="850"] {
+    transition-delay: .85s
+}
+
+[data-sal][data-sal-delay="900"] {
+    transition-delay: .9s
+}
+
+[data-sal][data-sal-delay="950"] {
+    transition-delay: .95s
+}
+
+[data-sal][data-sal-delay="1000"] {
+    transition-delay: 1s
+}
+
+[data-sal][data-sal-easing=linear] {
+    transition-timing-function: linear
+}
+
+[data-sal][data-sal-easing=ease] {
+    transition-timing-function: ease
+}
+
+[data-sal][data-sal-easing=ease-in] {
+    transition-timing-function: ease-in
+}
+
+[data-sal][data-sal-easing=ease-out] {
+    transition-timing-function: ease-out
+}
+
+[data-sal][data-sal-easing=ease-in-out] {
+    transition-timing-function: ease-in-out
+}
+
+[data-sal][data-sal-easing=ease-in-cubic] {
+    transition-timing-function: cubic-bezier(.55, .055, .675, .19)
+}
+
+[data-sal][data-sal-easing=ease-out-cubic] {
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-out-cubic] {
+    transition-timing-function: cubic-bezier(.645, .045, .355, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-circ] {
+    transition-timing-function: cubic-bezier(.6, .04, .98, .335)
+}
+
+[data-sal][data-sal-easing=ease-out-circ] {
+    transition-timing-function: cubic-bezier(.075, .82, .165, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-out-circ] {
+    transition-timing-function: cubic-bezier(.785, .135, .15, .86)
+}
+
+[data-sal][data-sal-easing=ease-in-expo] {
+    transition-timing-function: cubic-bezier(.95, .05, .795, .035)
+}
+
+[data-sal][data-sal-easing=ease-out-expo] {
+    transition-timing-function: cubic-bezier(.19, 1, .22, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-out-expo] {
+    transition-timing-function: cubic-bezier(1, 0, 0, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-quad] {
+    transition-timing-function: cubic-bezier(.55, .085, .68, .53)
+}
+
+[data-sal][data-sal-easing=ease-out-quad] {
+    transition-timing-function: cubic-bezier(.25, .46, .45, .94)
+}
+
+[data-sal][data-sal-easing=ease-in-out-quad] {
+    transition-timing-function: cubic-bezier(.455, .03, .515, .955)
+}
+
+[data-sal][data-sal-easing=ease-in-quart] {
+    transition-timing-function: cubic-bezier(.895, .03, .685, .22)
+}
+
+[data-sal][data-sal-easing=ease-out-quart] {
+    transition-timing-function: cubic-bezier(.165, .84, .44, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-out-quart] {
+    transition-timing-function: cubic-bezier(.77, 0, .175, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-quint] {
+    transition-timing-function: cubic-bezier(.755, .05, .855, .06)
+}
+
+[data-sal][data-sal-easing=ease-out-quint] {
+    transition-timing-function: cubic-bezier(.23, 1, .32, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-out-quint] {
+    transition-timing-function: cubic-bezier(.86, 0, .07, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-sine] {
+    transition-timing-function: cubic-bezier(.47, 0, .745, .715)
+}
+
+[data-sal][data-sal-easing=ease-out-sine] {
+    transition-timing-function: cubic-bezier(.39, .575, .565, 1)
+}
+
+[data-sal][data-sal-easing=ease-in-out-sine] {
+    transition-timing-function: cubic-bezier(.445, .05, .55, .95)
+}
+
+[data-sal][data-sal-easing=ease-in-back] {
+    transition-timing-function: cubic-bezier(.6, -.28, .735, .045)
+}
+
+[data-sal][data-sal-easing=ease-out-back] {
+    transition-timing-function: cubic-bezier(.175, .885, .32, 1.275)
+}
+
+[data-sal][data-sal-easing=ease-in-out-back] {
+    transition-timing-function: cubic-bezier(.68, -.55, .265, 1.55)
+}
+
+[data-sal|=fade] {
+    opacity: 0;
+    transition-property: opacity
+}
+
+[data-sal|=fade].sal-animate,
+body.sal-disabled [data-sal|=fade] {
+    opacity: 1
+}
+
+[data-sal|=slide] {
+    opacity: 0;
+    transition-property: opacity, transform
+}
+
+[data-sal=slide-up] {
+    transform: translateY(20%)
+}
+
+[data-sal=slide-down] {
+    transform: translateY(-20%)
+}
+
+[data-sal=slide-left] {
+    transform: translateX(20%)
+}
+
+[data-sal=slide-right] {
+    transform: translateX(-20%)
+}
+
+[data-sal|=slide].sal-animate,
+body.sal-disabled [data-sal|=slide] {
+    opacity: 1;
+    transform: none
+}
+
+[data-sal|=zoom] {
+    opacity: 0;
+    transition-property: opacity, transform
+}
+
+[data-sal=zoom-in] {
+    transform: scale(.5)
+}
+
+[data-sal=zoom-out] {
+    transform: scale(1.1)
+}
+
+[data-sal|=zoom].sal-animate,
+body.sal-disabled [data-sal|=zoom] {
+    opacity: 1;
+    transform: none
+}
+
+[data-sal|=flip] {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition-property: transform
+}
+
+[data-sal=flip-left] {
+    transform: perspective(2000px) rotateY(-91deg)
+}
+
+[data-sal=flip-right] {
+    transform: perspective(2000px) rotateY(91deg)
+}
+
+[data-sal=flip-up] {
+    transform: perspective(2000px) rotateX(-91deg)
+}
+
+[data-sal=flip-down] {
+    transform: perspective(2000px) rotateX(91deg)
+}
+
+[data-sal|=flip].sal-animate,
+body.sal-disabled [data-sal|=flip] {
+    transform: none
+}
+/*# sourceMappingURL=sal.css.map*/
+</style>
+</body>
+
+</html>

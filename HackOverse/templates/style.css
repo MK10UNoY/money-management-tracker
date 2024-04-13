@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 20px;
+    background-color: rgba(132, 132, 255, 0.15) ;
+    display: flex;
+    flex-direction: column;
+}
+.goalcard{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: max-content;
+    background-color: #fefefe;
+    border-radius: 20px;
+    padding: 20px;
+}
+.goalcard .heading{
+    font-size: 24px;
+    color: #adada5;
+}
+.graphcard{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: max-content;
+    background-color: #fefefe;
+    border-radius: 20px;
+    padding: 20px;
+}
+.graphcard .heading{
+    font-size: 24px;
+    color: #adada5;
+}
+.secndline{
+    display: flex;
+    gap:50px
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main-body">
+        <div id="side-navbar">
+            <font>Menu</font>
+            <div id="dashboard-bar">Dashboard</div>
+            <div id="goals-bar">
+                <font>Goals</font>
+                <div id="set-goals-bar">Set Goal</div>
+                <div id="active-goals-bar">Active Goal</div>
+                <div id="past-goals-bar">Past Goal</div>
+            </div>
+            <div id="savings-calc-bar">Savings calcculator</div>
+            <div id="analytics-bar">Analytics</div>
+            <div id="go-pro-bar">Go Pro</div>
+            <div id="get-in-touch-bar">Get In Touch</div>
+        </div>
+        <div id="main-content">
+            <div id="title-dashboard">Analytics</div>
+            <div id="alart"></div>
+            <div id="columnchart_values1" class="columnchart_values" style="width: 900px; height: 300px;"></div>
+            <div id="columnchart_values2" class="columnchart_values" style="width: 900px; height: 300px;"></div>
+            <div id="columnchart_values3" class="columnchart_values" style="width: 900px; height: 300px;"></div>
+            <div id="columnchart_values4" class="columnchart_values" style="width: 900px; height: 300px;"></div>
+        </div>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            border: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #small-cards-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        #small-cards-section>div{
+            height: 100px;
+            width: 250px;
+            margin-left: 20px;
+            border-radius: 7px;
+            background-color: #BBE5F7;
+        }
+        #alart {
+            margin: 20px;
+            width: auto;
+            height: 50px;
+            background-color: #BBE5F7;
+            border-radius: 7px;
+        }
+
+        #title-dashboard {
+            margin: 20px;
+            margin-top: 50px;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        #main-content {
+            width: -webkit-fill-available;
+            left: 300px;
+            position: absolute;
+            background-color: #8585ff26;
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        #main-content div {
+            position: relative;
+        }
+
+        .columnchart_values {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            height: auto !important;
+            width: fit-content !important;
+            margin: 20px;
+            border-radius: 7px;
+        }
+
+        .columnchart_values>div {
+            border-radius: 7px;
+        }
+
+        #side-navbar font {
+            margin-top: 50px;
+            text-align: center;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        #side-navbar {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        #side-navbar>div, #goals-bar>div {
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            width: -webkit-fill-available;
+            padding-left: 20px;
+            height: 40px;
+            border-radius: 7px;
+        }
+
+        #side-navbar>div:hover, #goals-bar>div:hover {
+            background-color: aliceblue;
+        }
+
+        #side-navbar {
+            width: 300px !important;
+            height: 100%;
+            position: absolute;
+            background-color: antiquewhite;
+        }
+
+        #goals-bar {
+            height: fit-content !important;
+            flex-direction: column;
+            background-color: transparent !important;
+        }
+
+        #goals-bar>font {
+            margin-top: 0;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data1 = google.visualization.arrayToDataTable([
+                ["Element", "Density", { role: "style" }],
+                ["Copper", 8.94, "#8485FF"],
+                ["Silver", 10.49, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"]
+            ]);
+
+            var view1 = new google.visualization.DataView(data1);
+            view1.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options1 = {
+                title: "Density of Precious Metals, in g/cm^3",
+                width: 600,
+                height: 400,
+                bar: { groupWidth: "80%" },
+                legend: { position: "none" },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values1"));
+            chart.draw(view1, options1);
+            
+            var data2 = google.visualization.arrayToDataTable([
+                ["Element", "Density", { role: "style" }],
+                ["Copper", 8.94, "#8485FF"],
+                ["Silver", 10.49, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"]
+            ]);
+
+            var view2 = new google.visualization.DataView(data2);
+            view2.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options2 = {
+                title: "Density of Precious Metals, in g/cm^3",
+                width: 600,
+                height: 400,
+                bar: { groupWidth: "80%" },
+                legend: { position: "none" },
+            };
+            var chart2 = new google.visualization.ColumnChart(document.getElementById("columnchart_values2"));
+            chart2.draw(view2, options2);
+
+            var data3 = google.visualization.arrayToDataTable([
+                ["Element", "Density", { role: "style" }],
+                ["Copper", 8.94, "#8485FF"],
+                ["Silver", 10.49, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"]
+            ]);
+
+            var view3 = new google.visualization.DataView(data3);
+            view3.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options3 = {
+                title: "Density of Precious Metals, in g/cm^3",
+                width: 600,
+                height: 400,
+                bar: { groupWidth: "80%" },
+                legend: { position: "none" },
+            };
+            var chart3 = new google.visualization.ColumnChart(document.getElementById("columnchart_values3"));
+            chart3.draw(view3, options3);
+            
+            var data4 = google.visualization.arrayToDataTable([
+                ["Element", "Density", { role: "style" }],
+                ["Copper", 8.94, "#8485FF"],
+                ["Silver", 10.49, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"],
+                ["Gold", 19.30, "#8485FF"]
+            ]);
+
+            var view4 = new google.visualization.DataView(data4);
+            view4.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options4 = {
+                title: "Density of Precious Metals, in g/cm^3",
+                width: 600,
+                height: 400,
+                bar: { groupWidth: "80%" },
+                legend: { position: "none" },
+            };
+            var chart4 = new google.visualization.ColumnChart(document.getElementById("columnchart_values4"));
+            chart4.draw(view4, options4);
+        }
+    </script>
+</body>
+
+</html>

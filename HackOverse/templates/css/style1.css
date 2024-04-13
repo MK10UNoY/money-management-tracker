@@ -1,0 +1,270 @@
+*{
+    scroll-behavior: smooth;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    transition: 0.5s;
+}
+header img{
+    width: 70px;
+    height: 70px;
+}
+header.sticky{
+    padding: 20px 100px;
+    background: #162c3b;
+}
+header .logo{
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.banner{
+    FONT-WEIGHT: 500;
+    position: relative;
+    width: 100%;
+    height:100vh;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    background: linear-gradient(transparent,#fefefe,90deg) !important;
+    padding: 0;
+}
+.banner img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+.banner .content{
+    position: relative;
+    max-width: 500px;
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 7%;
+}
+.banner .content h2{
+    font-size: 60px;
+    color:#000000;
+
+}
+.banner .content p{
+    font-size: 24px;
+    color:#000000;   
+}
+.banner .content a{
+    text-decoration: none;
+}
+.banner .content .learnmore{
+    font-size: 20px;
+    color:#000000;   
+    border:2px solid #000000;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    height: 50px;
+    align-content: center;
+    transition: all 0.2s;
+}
+.banner .content .learnmore:hover{
+    color: #fefefe;
+    background-color: #000000;
+    border:2px solid #fefefe;
+    box-shadow:0 0 2px 1px #000000;
+}
+.about{
+    position: relative;
+    width: 100%;
+    height:150vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/about.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+.about .box{
+    margin-top: 4%;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    height: inherit;
+    justify-content: space-evenly;
+}
+.about .box .firstline{
+    display: flex;
+    width: 80%;
+    gap: 10px;
+    justify-content: center;
+}
+
+.about .box .firstline .text{
+    display: flex;
+    width: 30%;
+    position: absolute;
+    z-index: 1;
+}
+.about .box .firstline .textbox{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.about .box .firstline .i{
+    position: relative;
+    height: 40%;
+    width: 40%;
+    background: url('../assets/about.svg');
+}
+
+.about .box .firstline .textbox h2{
+    font-size: 3em;
+}
+.about .box .firstline .textbox p{
+    font-size: 1.5em;
+}
+.about .box .firstline .textbox .learnmore{
+    font-size: 1.5em;
+    color:#000000;   
+    border:2px solid #000000;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    height: 50px;
+    align-content: center;
+    transition: all 0.2s;
+}
+.about .box .firstline .textbox .learnmore:hover{
+    font-size: 1.5em;
+    color: #fefefe;
+    background-color: #000000;
+    border:2px solid #fefefe;
+    box-shadow:0 0 2px 1px #000000;
+}
+
+.secondline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.secondline:nth-child(){
+    margin: 20px;
+}
+.card1 {
+    display: flex;
+    flex-direction: column;
+    background: -webkit-linear-gradient(#FA82AD,#D52D2D);
+    width: 190px;
+    height: 200px;
+    padding: 14px;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #8485FF;
+    background: -webkit-linear-gradient(#2F37FF,#3C3C79);
+    width: 190px;
+    height: 200px;
+    padding: 14px;
+}
+
+.card3 {
+    display: flex;
+    flex-direction: column;
+    background-color: #4344E8;
+    background: -webkit-linear-gradient(#9192FF,#1F2061);
+    width: 190px;
+    height: 200px;
+    padding: 14px;
+}
+
+.card1 h3,
+.card2 h3,
+.card3 h3 {
+    font-size: 2em;
+    padding: 10px;
+}
+
+.services{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ECECEC;
+}
+#whitebox {
+    background-color: wheat;
+    width: 70%;
+    height: 300px;
+    justify-self: center;
+}
+
+.cards-nthh {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px !important;
+    justify-content: space-around;
+}
+
+#card1 {
+    background-color: #4344E8;
+}
+
+.small-height-card {
+    width: 33%;
+}
+
+#tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.detailscard {
+    height: fit-content;
+    width: 25%;
+    max-height: 70%;
+    min-height: 70%;
+    flex-wrap: wrap;
+    color: whitesmoke;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+}
+
+.detailscard ul {
+    margin-top: 30px ;
+    font-size: 1.3em;
+}
+
+.detailscard font {
+    font-size: 2em;
+}
+
+#headline-tools {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bolder;
+    padding: 50px;
+}

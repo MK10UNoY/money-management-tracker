@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main-body">
+        <div id="side-navbar">
+            <font>Menu</font>
+            <div id="dashboard-bar">Dashboard</div>
+            <div id="goals-bar">
+                <font>Goals</font>
+                <div id="set-goals-bar">Set Goal</div>
+                <div id="active-goals-bar">Active Goals</div>
+                <div id="past-goals-bar">Past Goals</div>
+            </div>
+            <div id="savings-calc-bar">Savings calcculator</div>
+            <div id="analytics-bar">Analytics</div>
+            <div id="go-pro-bar">Go Pro</div>
+            <div id="get-in-touch-bar">Get In Touch</div>
+        </div>
+        <div id="main-content">
+            <div id="title-dashboard">Analytics</div>
+            <div class="alert">
+                <div class="cards card_one">
+                    <text>Monthly Goal</text>
+                    <div class="donutchart_one" style="width: 900px; height: 500px;"></div>
+                </div>
+                <div class="cards card_two">
+                    <text>Overall Goal</text>
+                    <div class="donutchart_two" style="width: 900px; height: 500px;"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            border: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #small-cards-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        #small-cards-section>div{
+            height: 100px;
+            width: 250px;
+            margin-left: 20px;
+            border-radius: 7px;
+            background-color: #BBE5F7;
+        }
+        #alart {
+            margin: 20px;
+            width: auto;
+            height: 50px;
+            background-color: #BBE5F7;
+            border-radius: 7px;
+        }
+        .alert{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #title-dashboard {
+            margin: 20px;
+            margin-top: 50px;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        #main-content {
+            width: -webkit-fill-available;
+            left: 300px;
+            position: absolute;
+            background-color: #8585ff26;
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        #main-content div {
+            position: relative;
+        }
+
+        .columnchart_values {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            height: auto !important;
+            width: fit-content !important;
+            margin: 20px;
+            border-radius: 7px;
+        }
+
+        .columnchart_values>div {
+            border-radius: 7px;
+        }
+
+        #side-navbar font {
+            margin-top: 50px;
+            text-align: center;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        #side-navbar {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        #side-navbar>div, #goals-bar>div {
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            width: -webkit-fill-available;
+            padding-left: 20px;
+            height: 40px;
+            border-radius: 7px;
+        }
+
+        #side-navbar>div:hover, #goals-bar>div:hover {
+            background-color: rgb(96, 9, 158);
+        }
+        #goals-bar>div:hover {
+            color:white;
+        }
+
+        #side-navbar {
+            width: 300px !important;
+            height: 100%;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #goals-bar {
+            height: fit-content !important;
+            flex-direction: column;
+            background-color: transparent !important;
+        }
+
+        #goals-bar>font {
+            margin-top: 0;
+        }
+
+        .alert{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            padding: 2rem 4rem 2rem 4rem;
+            /* background: red; */
+            /* height: 5rem; */
+        }
+        .alert .cards{
+            display: flex;
+            padding: 1rem;
+            background-color: #BBE5F7;
+            font-size: 1.25rem;
+            font-weight: 500;
+            height: 400px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgb(102, 145, 244);
+        }
+
+        .cards img{
+            display: flex;
+            height: 250px;
+        }
+        .card_two{
+            flex-direction: row;
+
+        }
+        .card_two text{
+            overflow-x: visible;
+        }
+    </style>
+</body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data_one = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Total',     100],
+      ['Saved', 40]
+    ]);
+
+    var data_two = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Total',     100],
+      ['Saved', 50]
+    ]);
+
+    var options = {
+        pieHole: 0.5,
+        backgroundColor: 'transparent',
+        chartArea: {width: '100%', height: '80%'},
+    };
+
+    var chart = new google.visualization.PieChart(document.querySelector('.donutchart_one'));
+    chart.draw(data_one, options);
+    var chart = new google.visualization.PieChart(document.querySelector('.donutchart_two'));
+    chart.draw(data_two, options);
+}
+
+</script>
+
+</html>
